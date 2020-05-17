@@ -115,51 +115,7 @@ function fromJSON(proto, json) {
  */
 
 const cssSelectorBuilder = {
-  string: '',
-  element(value) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = this.string + value;
-    obj.number = 1;
-    return obj;
-  },
-  id(value) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = `${this.string}#${value}`;
-    obj.number = 2;
-    return obj;
-  },
-  class(value) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = `${this.string}.${value}`;
-    obj.number = 3;
-    return obj;
-  },
-  attr(value) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = `${this.string}[${value}]`;
-    obj.number = 4;
-    return obj;
-  },
-  pseudoClass(value) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = `${this.string}:${value}`;
-    obj.number = 5;
-    return obj;
-  },
-  pseudoElement(value) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = `${this.string}::${value}`;
-    obj.number = 6;
-    return obj;
-  },
-  combine(selector1, combinator, selector2) {
-    const obj = Object.create(cssSelectorBuilder);
-    obj.string = `${selector1.string} ${combinator} ${selector2.string}`;
-    return obj;
-  },
-  stringify() {
-    return this.string;
-  },
+
 };
 
 
